@@ -31,33 +31,36 @@ class Cookbook extends Component {
     this.setState({ currentSearchTerm: e.target.value });
   }
 
-  componentWillMount = () => {
-
-  }
-
   handleSubmit = (e) => {
     const API = `https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=${this.state.currentSearchTerm}`;
     fetch(API)
       .then(response => response.json())
-      .then(data => this.setState({ searchedDrinks: data }));
+      .then(data => 
+        {this.setState({ searchedDrinks: data })
+        // changing url using JS instead of anchor tag
+        this.props.history.push(`/cookbook/${this.state.currentSearchTerm}`)
+        console.log(this.props)
+        });
     e.preventDefault();
   }
 
   render() {
-    console.log(this.state.drinkData)
-    console.log(this.state.selectedDrink)
-    console.log(this.state.searchedDrinks)
-    console.log(this.state.currentSearchTerm)
-
+    const { match, location } = this.props;
     let selectedDrinkDetails;
-    if (this.state.selectedDrink !== '') {
+    if (this.state.selectedDrink !== ''
+        &&
+        location.pathname !== "/cookbook"
+      ) {
       selectedDrinkDetails =
-        <RecipeDetails
-          drinkData={this.state.drinkData}
-        />
+      <Route
+      path = {'/cookbook/:searchTerm/:selectedDrink'}
+      render = {()=> <RecipeDetails 
+        drinkData={this.state.drinkData}
+        currentSearchTerm={this.state.currentSearchTerm}
+      />}
+	    />
     }
 
-    const { match } = this.props;
     return (
       <div>
         {/* video background */}
@@ -72,7 +75,7 @@ class Cookbook extends Component {
             <div className="cookbook">
               {/* <Switch> */}
                 <Route
-                  path={`/cookbook`}
+                  path={`/cookbook/:currentSearchTerm`}
                   render={() => (
                     <RecipeSearch
                       currentSearchTerm={this.state.currentSearchTerm}
@@ -83,7 +86,9 @@ class Cookbook extends Component {
                 />
                   
               {/* </Switch> */}
+              
               {selectedDrinkDetails}
+
               <div id="search--bar">
                 <form onSubmit={this.handleSubmit}>
                   <input

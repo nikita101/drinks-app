@@ -3,12 +3,12 @@ import { Link } from "react-router-dom";
 
 
 const RecipeDetails = (props) => {
-  const { drinkData } = props;
-
+  const { drinkData, currentSearchTerm } = props;
+console.log(props.currentSearchTerm)
   return (
 
     <div className="recipedetails">
-      <Link to="/cookbook">
+      <Link to={`/cookbook/${props.currentSearchTerm}`}>
         <button>Back</button>
       </Link>
       <img
@@ -21,7 +21,6 @@ const RecipeDetails = (props) => {
       <p>{drinkData.strInstructions}</p>
     </div>
   );
-
 }
 
 export default RecipeDetails;
