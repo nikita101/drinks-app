@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import RecipeDetails from './RecipeDetails'
 import { Link, Switch, Route } from 'react-router-dom';
-import '../styles/Styled.css'
+import '../styles/App.css'
 
 class RecipeSearch extends Component {
     state = {

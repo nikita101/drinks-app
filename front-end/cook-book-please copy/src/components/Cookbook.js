@@ -4,7 +4,6 @@ import Footer from '../components/Footer';
 import RecipeSearch from '../components/RecipeSearch';
 import RecipeDetails from '../components/RecipeDetails';
 import { Route } from 'react-router-dom';
-import '../styles/Styled.css'
 
 class Cookbook extends Component {
   state = {
