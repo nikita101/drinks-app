@@ -81,7 +81,7 @@ class Cookbook extends Component {
                     />
                   )}
                 />
-                
+                  
               {/* </Switch> */}
               {selectedDrinkDetails}
               <div id="search--bar">
