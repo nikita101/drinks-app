@@ -79,7 +79,7 @@ class Cookbook extends Component {
                       searchedDrinks={this.state.searchedDrinks}
                       openRecipe={this.openRecipe}
                     />
-                  )}
+                  )} 
                 />
                   
               {/* </Switch> */}
