@@ -1,14 +1,14 @@
 import React, { Component } from 'react';
 import '../styles/Styled.css'
 
-class Nav extends Component {
+class Footer extends Component {
   render() {
     return (
-      <div className="nav">
-      <p>Nav</p>
+      <div className="footer">
+      <p>Footer</p>
       </div>
     );
   }
 }
 
-export default Nav;
+export default Footer;

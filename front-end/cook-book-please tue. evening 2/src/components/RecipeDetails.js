@@ -12,13 +12,16 @@ const RecipeDetails = (props) => {
         <button>Back</button>
       </Link>
       <img
-        className="recipe--details_image"
+        className="recipe-details_image"
         src={drinkData.strDrinkThumb} />
-      <p>{drinkData.strDrink}</p>
+      <p className="recipe-details_title">
+        {drinkData.strDrink}</p>
+      <div className="recipe-details_body">  
       <p>{drinkData.strCategory}</p>
       <p>{drinkData.strAlcoholic}</p>
       <p>{drinkData.strGlass}</p>
       <p>{drinkData.strInstructions}</p>
+      </div>
     </div>
   );
 }
