@@ -1,3 +1,6 @@
+.html {
+  font-size: 10em; }
+
 #video {
   position: absolute;
   left: 50%;
@@ -60,11 +63,16 @@
   margin-top: 1rem;
   margin-left: 38vw; }
 
+.cookbook-parent {
+  position: relative;
+  margin-top: 10%; }
+
 .cookbook {
+  position: absolute;
   display: flex;
   align-items: center;
   flex-wrap: wrap;
-  width: 100vw;
+  width: 100%;
   height: 100vh;
   margin-top: 10vh;
   background: rgba(0, 0, 0, 0.6);
@@ -72,7 +80,8 @@
   background: linear-gradient(to top, #000, transparent); }
 
 .Recipe-search-parent {
-  position: relative; }
+  position: relative;
+  margin-top: 10vh; }
 
 .recipe-search__header {
   color: rgba(235, 242, 238, 0.735); }
@@ -81,13 +90,13 @@
   opacity: 0;
   animation: fade-in-right ease 0.4s forwards;
   position: absolute;
-  margin-top: -95%;
+  margin-top: -10vh;
   align-items: center;
   flex-direction: column;
   width: 25vw;
   height: 45vh;
-  padding-left: 2%;
-  margin-left: 3%;
+  padding-left: 3%;
+  margin-left: 20%;
   overflow-y: scroll;
   background: transparent; }
 
@@ -118,26 +127,41 @@ div::-webkit-scrollbar-track {
   animation-delay: 0.8s; }
 
 .recipe-search--recipetitle {
-  color: #E5B181; }
+  color: #E5B181;
+  font-size: 1.8rem; }
+
+.recipe-search--recipetitle:hover {
+  text-decoration: none !important; }
+
+a:-webkit-any-link {
+  text-decoration: none !important; }
 
 .recipe--images {
   width: 40%; }
 
-.recipedetails {
-  display: flex;
-  justify-content: center;
+.recipe-details-parent {
+  position: relative;
+  margin-top: 25% !important; }
+
+.recipe-details {
+  opacity: 0;
+  animation: fade-in-right ease 0.4s forwards;
+  position: absolute;
+  align-items: center;
   flex-direction: column;
-  padding-top: 10%;
-  margin-left: 10%;
-  width: 50vw;
-  height: 100%;
-  color: white; }
+  min-height: 10vh;
+  width: 45vw;
+  padding-left: 3%;
+  margin-left: 15%;
+  overflow-y: scroll;
+  background: transparent; }
 
 .recipe-details_image {
-  width: 40vw; }
+  width: 35vw; }
 
 .recipe-details_title {
-  color: #E5B181; }
+  color: #E5B181;
+  font-size: 3rem; }
 
 .recipe-details_body {
   color: white; }

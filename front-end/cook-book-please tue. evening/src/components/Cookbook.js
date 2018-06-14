@@ -84,8 +84,9 @@ class Cookbook extends Component {
                 </form>
               </div>
             </div>
-            <div className="cookbook">
-              <div className="recipe-search-parent">
+            <div className="cookbook-parent container">
+            <div className="cookbook row">
+              <div className="recipe-search-parent col-sm">
                 <Route
                   path={`/cookbook/:currentSearchTerm`}
                   render={() => (
@@ -97,7 +98,10 @@ class Cookbook extends Component {
                   )}
                 />
               </div>
+              <div className="col-sm">
               {selectedDrinkDetails}
+              </div>
+            </div>
             </div>
             <Footer />
           </div>

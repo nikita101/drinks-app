@@ -12,21 +12,21 @@ const RecipeDetails = (props) => {
   }
 
   return (
-
-    <div className="recipedetails">
+    <div className="recipe-details-parent">
+    <div className="recipe-details">
       <Link to={`/cookbook/${props.currentSearchTerm}`}>
-        <button>Back</button>
+        X
       </Link>
+      <p className="recipe-details_title">
+        {drinkData.strDrink}</p>
       <img
         className="recipe-details_image"
         src={drinkData.strDrinkThumb} />
-      <p className="recipe-details_title">
-        {drinkData.strDrink}</p>
       <div className="recipe-details_body">
         <p>{drinkData.strCategory}</p>
         <p>{drinkData.strAlcoholic}</p>
         <p>{drinkData.strGlass}</p>
-        <div className="recipe-details_instructions_title"> Ingredients</div>
+        <div className="recipe-details_ingredients_title"> Ingredients</div>
         <p>{drinkData.strMeasure1}<span></span>{drinkData.strIngredient1}</p>
         <p>{drinkData.strMeasure2}<span></span>{drinkData.strIngredient2}</p>
         <p>{drinkData.strMeasure3}<span></span>{drinkData.strIngredient3}</p>
@@ -39,6 +39,7 @@ const RecipeDetails = (props) => {
         </div>
       </div>
     </div>
+  </div>
   );
 }
 
