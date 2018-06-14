@@ -43,7 +43,7 @@ class Cookbook extends Component {
     e.preventDefault();
   }
 
-  
+
 
   render() {
     const { match, location } = this.props;
@@ -61,30 +61,30 @@ class Cookbook extends Component {
           />}
         />
     }
-    
+
     return (
       <div>
-          {/* video background */}
-          <div id="video-container">
-            <video id="video" muted loop autoPlay>
-              <source src="http://muloux.com/wp-content/uploads/2018/06/Pexels-Videos-5009.mp4" />
-              Your browser does not support the video tag.
+        {/* video background */}
+        <div id="video-container">
+          <video id="video" muted loop autoPlay>
+            <source src="http://muloux.com/wp-content/uploads/2018/06/Pexels-Videos-5009.mp4" />
+            Your browser does not support the video tag.
           </video>
-            {/* calling on nav component */}
-            <div>
-              <div className="nav-parent">
+          {/* calling on nav component */}
+          <div>
+            <div className="nav-parent">
               <Navigation />
               <div id="search--bar">
-                  <form onSubmit={this.handleSubmit}>
-                    <input
-                      type="text"
-                      onChange={this.onChange}
-                      value={this.state.currentSearchTerm} placeholder="Search.." />
-                    <input type="submit" value="Submit" />
-                  </form>
-                </div>
+                <form onSubmit={this.handleSubmit}>
+                  <input
+                    type="text"
+                    onChange={this.onChange}
+                    value={this.state.currentSearchTerm} placeholder="Search.." />
+                  <input type="submit" value="Submit" />
+                </form>
               </div>
-              <div className="cookbook">
+            </div>
+            <div className="cookbook">
               <div className="recipe-search-parent">
                 <Route
                   path={`/cookbook/:currentSearchTerm`}
@@ -97,14 +97,13 @@ class Cookbook extends Component {
                   )}
                 />
               </div>
-                {selectedDrinkDetails}
-              </div>
-              <Footer />
+              {selectedDrinkDetails}
             </div>
+            <Footer />
           </div>
+        </div>
       </div>
     );
   }
 }
-
 export default Cookbook;

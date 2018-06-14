@@ -30,15 +30,15 @@ class RecipeSearch extends Component {
                 <div key={i}>
                     {/* recipe name */}
                     <div className="recipe-search--recipetitle">
-                    <p>{searchedRecipe.drinks[i].strDrink}</p>
+                        <p>{searchedRecipe.drinks[i].strDrink}</p>
                     </div>
                     {/* recipe image */}
                     <Link to={`/cookbook/${this.state.searchTerm}/${searchedDrinks.drinks[i].idDrink}`} >
-                    <img
-                        onClick={() => this.props.openRecipe(searchedDrinks.drinks[i].idDrink)}
-                        className="recipe--images"
-                        src={searchedRecipe.drinks[i].strDrinkThumb}>
-                    </img>
+                        <img
+                            onClick={() => this.props.openRecipe(searchedDrinks.drinks[i].idDrink)}
+                            className="recipe--images"
+                            src={searchedRecipe.drinks[i].strDrinkThumb}>
+                        </img>
                     </Link>
                 </div>
             );
@@ -48,12 +48,12 @@ class RecipeSearch extends Component {
 
         return (
             <div className="recipe-search">
-            <div className="recipe-search__header">
-            {/* <h3>Drinks</h3> */}
-                <div className="recipeWindow recipe-search__scrollbar">
-                    {recipesJSX}
+                <div className="recipe-search__header">
+                    {/* <h3>Drinks</h3> */}
+                    <div className="recipeWindow recipe-search__scrollbar">
+                        {recipesJSX}
+                    </div>
                 </div>
-            </div>
             </div>
         );
     }
