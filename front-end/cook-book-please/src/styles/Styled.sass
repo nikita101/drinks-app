@@ -103,6 +103,7 @@ $primary-font-size: 10em
   width: 100%
   height: 90vh
   margin-top: 10vh
+  // padding-bottom: 25vh
   background: rgba(0,0,0,0.6)
   background: -webkit-linear-gradient(to top, #000, transparent)
   background: linear-gradient(to top, #000, transparent)
@@ -125,10 +126,10 @@ $primary-font-size: 10em
   position: absolute
   margin-top: -40vh
   flex-direction: column
-  width: 25vw
+  width: 50vw
   height: 45vh
   padding-left: 3%
-  margin-left: 20%
+  margin-left: 70%
   overflow-y: scroll
   background: transparent
  
@@ -148,7 +149,7 @@ div::-webkit-scrollbar-track
   margin: 10px 0
 
 ::-webkit-scrollbar-thumb 
-  background: rgba(255,255,255,.2)
+  background: $secondary-title-color
   width: 1rem
 
 ::-webkit-scrollbar-thumb:hover 
@@ -185,13 +186,6 @@ a:-webkit-any-link
   margin-left: -20vw
   background: transparent
 
-.recipe-details_bullets
-  margin-left: 45%
-  margin-top: -55vh
-  width: 25vw
-  display: wrap
-  align-items: center
-  justify-content: flex-end
 
 .recipe-details_details_lable
   color: $secondary-title-color
@@ -205,22 +199,31 @@ a:-webkit-any-link
   justify-content: flex-start
 
 #recipe-details_close_tab
-  color: pink
-  font-size: 2rem
+  font-size: 3rem
   margin-bottom: 5%
   display: flex
   justify-content: flex-end
+  font-color: $recipe-title-color !important
 
+.recipe-details_body
+  color: $primary-recipe-color
+  margin-top: -10vh
+    
 .recipe-details_image
     width: 35vw
+
+.recipe-details_bullets
+  margin-left: 45%
+  margin-top: -55vh
+  width: 25vw
+  margin-bottom: -5vh
+  display: wrap
+  align-items: center
+  justify-content: flex-end
 
 .recipe-details_title
     color: $recipe-title-color
     font-size: 7rem
-
-.recipe-details_body
-    color: $primary-recipe-color
-    margin-top: -10vh
 
 .recipe-details_ingredients_title
   color: $secondary-title-color
@@ -228,6 +231,10 @@ a:-webkit-any-link
   padding-bottom: 3%
   padding-top: 10%
   padding-bottom: 5%
+
+.recipe-details_instructions
+  width: 30vw
+  margin-bottom: 10vh
 
 .recipe-details_instructions_title
   @extend .recipe-details_ingredients_title
@@ -285,13 +292,72 @@ a:-webkit-any-link
     opacity: 1
     transform: translateX(0)
   
-@keyframes fade-out-right 
-  from 
-    opacity: 1
-    transform: translateX(-100px)
-  to 
+
+
+
+
+@-webkit-keyframes fadeIn
+  from
     opacity: 0
-    transform: translateX(0)
+
+  to
+    opacity: 1
+
+
+@-moz-keyframes fadeIn
+  from
+    opacity: 0
+
+  to
+    opacity: 1
+
+
+@keyframes fadeIn
+  from
+    opacity: 0
+
+  to
+    opacity: 1
+
+
+.fade-in
+  opacity: 0
+  -webkit-animation: fadeIn ease-in 1
+  -moz-animation: fadeIn ease-in 1
+  animation: fadeIn ease-in 1
+  -webkit-animation-fill-mode: forwards
+  -moz-animation-fill-mode: forwards
+  animation-fill-mode: forwards
+  -webkit-animation-duration: 1s
+  -moz-animation-duration: 1s
+  animation-duration: 1s
+  &.one
+    -webkit-animation-delay: 0.7s
+    -moz-animation-delay: 0.7s
+    animation-delay: 0.7s
+  &.two
+    -webkit-animation-delay: 1.2s
+    -moz-animation-delay: 1.2s
+    animation-delay: 1.2s
+  &.three
+    -webkit-animation-delay: 1.6s
+    -moz-animation-delay: 1.6s
+    animation-delay: 1.6s
+
+
+.box
+  width: 200px
+  height: 200px
+  position: relative
+  margin: 10px
+  float: left
+  border: 1px solid #333
+  background: #999
+
+
+
+
+
     // Media Queries
 
 @media only screen and (max-width: 766px) 
@@ -299,8 +365,31 @@ a:-webkit-any-link
     display: inline-block
 
   .recipe-details
-    margin-top: -45vh
     margin-left: 0
+    margin-right: 0
+    font-size: 1rem
+    height: 100vh
+    padding: 5%
+    width: 100vw
+
+  .recipe-details_body
+    margin-top: 58vh
+    font-size: 1.6rem
+    margin-left: -10vw
+
+  .recipe-details_bullets
+    width: 80vw
+
+  .recipe-details_image
+    width: 80vw
+    margin-left: 6%
+    
+  .recipe-details_title
+    font-size: 4rem
+
+  #recipe-details_close_tab
+    font-size: 3rem
+    font-color: $recipe-title-color !important
 
   .recipe-search
     margin-top: -40vh
@@ -311,7 +400,7 @@ a:-webkit-any-link
   .recipe-search--recipetitle
     font-size: 2.2rem
 
-  .recipe-details_bullets
-    margin-left: 55%
+  .footer
+    height: 0
+    
 
-  .recipe-details_ingredients

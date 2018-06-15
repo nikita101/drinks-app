@@ -76,13 +76,14 @@ componentWillUpdate = () =>{
     console.log(this.state.searchError)
 
     return (
-      <div>
+      <div className="fade-in one">
         {/* video background */}
         <div id="video-container">
-          <video id="video" muted loop autoPlay>             
+          <video id="video" muted loop autoPlay>               
           {/* <source src="http://muloux.com/wp-content/uploads/2018/05/White-Smoke.mp4" /> */}
-          <source src="http://muloux.com/wp-content/uploads/2018/06/WINE_POUR_SLOW_MOTION.mp4" />
             {/* <source src="http://muloux.com/wp-content/uploads/2018/06/Pexels-Videos-5009.mp4" /> */}
+            <source src="http://muloux.com/wp-content/uploads/2018/06/Drink-Wine.mp4" />
+
             Your browser does not support the video tag.
           </video>
           <div>

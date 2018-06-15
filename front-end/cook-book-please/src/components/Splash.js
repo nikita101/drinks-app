@@ -8,7 +8,7 @@ const Splash = () => (
   <div>
     <div id="video-container">
       <video id="video" muted loop autoPlay> 
-      <source src="http://muloux.com/wp-content/uploads/2018/05/White-Smoke.mp4"/>
+      <source src="http://muloux.com/wp-content/uploads/2018/06/ezgif.com-gif-maker.mp4"/>
         Your browser does not support the video tag.
       </video>
       <div classname="container splash-container">
