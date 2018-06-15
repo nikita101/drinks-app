@@ -1,12 +1,26 @@
 
 //  variables 
 $primary-color:  rgba(235, 242, 238, 0.735)
-$recipe-title-color: #E5B181
-$primary-recipe-color: white
+// $recipe-title-color: #E5B181
+$recipe-title-color: #F2D7EE
+$secondary-title-color: #A5668B
+$primary-recipe-color: #D3BCC0
 $primary-font-size: 10em
 
 .html
   font-size: 10em
+
+.splash-container
+
+.splash-container_content
+  display: flex
+  align-items: center
+  justify-content: center
+  height: 100vh
+  
+.splash-container_content_header
+  display: block
+  margin-top: 50vh
 
 #video
   position: absolute
@@ -70,11 +84,14 @@ $primary-font-size: 10em
 #search--bar
     position: absolute !important
     margin-top: 1rem
-    margin-left: 38vw
+    margin-left: 36.5vw
 
 .cookbook-parent
-  position: relative
-  margin-top: 10%
+  position: relative !important
+  margin-top: 10vh
+  padding: 0%
+  width: 100% !important
+
 
 // Cookbook
 .cookbook
@@ -84,7 +101,7 @@ $primary-font-size: 10em
   flex-wrap: wrap
   // justify-content: center;
   width: 100%
-  height: 100vh
+  height: 90vh
   margin-top: 10vh
   background: rgba(0,0,0,0.6)
   background: -webkit-linear-gradient(to top, #000, transparent)
@@ -95,16 +112,18 @@ $primary-font-size: 10em
   position: relative
   margin-top: 10vh
 
+.search-error
+  color: $primary-recipe-color
 
 .recipe-search__header
   color: $primary-color
+
 
 .recipe-search
   opacity: 0
   animation: fade-in-right ease 0.4s forwards
   position: absolute
-  margin-top: -10vh
-  align-items: center
+  margin-top: -40vh
   flex-direction: column
   width: 25vw
   height: 45vh
@@ -153,32 +172,71 @@ a:-webkit-any-link
 .recipe--images
   width: 40%
 
-.recipe-details-parent
-  position: relative
-  margin-top: 25% !important
 
 .recipe-details
+  display: flex
   opacity: 0
-  animation: fade-in-right ease 0.4s forwards
+  animation: fade-in-right ease 0.5s forwards
   position: absolute
-  align-items: center
+  margin-top: -40vh
   flex-direction: column
-  min-height: 10vh
-  width: 45vw
-  padding-left: 3%
-  margin-left: 15%
-  overflow-y: scroll
+  width: 75vw
+  height: 70vh
+  margin-left: -20vw
   background: transparent
+
+.recipe-details_bullets
+  margin-left: 45%
+  margin-top: -55vh
+  width: 25vw
+  display: wrap
+  align-items: center
+  justify-content: flex-end
+
+.recipe-details_details_lable
+  color: $secondary-title-color
+
+.recipe-details_ingredients
+  margin-left: 45%
+  margin-top: 10vh
+  width: 20vw
+  display: wrap
+  align-items: center
+  justify-content: flex-start
+
+#recipe-details_close_tab
+  color: pink
+  font-size: 2rem
+  margin-bottom: 5%
+  display: flex
+  justify-content: flex-end
 
 .recipe-details_image
     width: 35vw
 
 .recipe-details_title
     color: $recipe-title-color
-    font-size: 3rem
+    font-size: 7rem
 
 .recipe-details_body
     color: $primary-recipe-color
+    margin-top: -10vh
+
+.recipe-details_ingredients_title
+  color: $secondary-title-color
+  font-size: 2rem
+  padding-bottom: 3%
+  padding-top: 10%
+  padding-bottom: 5%
+
+.recipe-details_instructions_title
+  @extend .recipe-details_ingredients_title
+
+.recipe-details_details_title
+  @extend .recipe-details_ingredients_title
+
+.recipe-details_seperator
+  padding: 5%
 
 #video-container
   min-width: 100%
@@ -207,7 +265,7 @@ a:-webkit-any-link
   position: fixed
   bottom: 0
   width: 100%
-  height: 60px
+  height: 30vh
   // Height of the footer
   background-color: black
 
@@ -227,9 +285,33 @@ a:-webkit-any-link
     opacity: 1
     transform: translateX(0)
   
-
+@keyframes fade-out-right 
+  from 
+    opacity: 1
+    transform: translateX(-100px)
+  to 
+    opacity: 0
+    transform: translateX(0)
     // Media Queries
 
 @media only screen and (max-width: 766px) 
   .navbar-toggler
     display: inline-block
+
+  .recipe-details
+    margin-top: -45vh
+    margin-left: 0
+
+  .recipe-search
+    margin-top: -40vh
+    flex-direction: column
+    width: 35vw
+    height: 65vh
+
+  .recipe-search--recipetitle
+    font-size: 2.2rem
+
+  .recipe-details_bullets
+    margin-left: 55%
+
+  .recipe-details_ingredients

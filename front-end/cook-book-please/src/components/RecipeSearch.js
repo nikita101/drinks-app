@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-import RecipeDetails from './RecipeDetails'
-import { Link, Switch, Route } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import '../styles/Styled.css'
 
 class RecipeSearch extends Component {
@@ -28,8 +27,7 @@ class RecipeSearch extends Component {
             recipesJSX = searchedRecipe.drinks.map((item, i) =>
                 // actual recipe
                 <div key={i}>
-                    <Link to={`/cookbook/${this.state.searchTerm}
-                    /${searchedDrinks.drinks[i].idDrink}`} 
+                    <Link to={`/cookbook/${this.state.searchTerm}/${searchedDrinks.drinks[i].idDrink}`} 
                     onClick={() => this.props.openRecipe(searchedDrinks.drinks[i].idDrink)}>
                     {/* recipe name */}
                     <div className="recipe-search--recipetitle">

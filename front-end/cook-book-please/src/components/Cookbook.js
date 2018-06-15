@@ -5,13 +5,16 @@ import RecipeSearch from '../components/RecipeSearch';
 import RecipeDetails from '../components/RecipeDetails';
 import { Route } from 'react-router-dom';
 import '../styles/Styled.css'
+import SearchError from '../components/SearchError'
+import Splash from '../components/Splash'
 
 class Cookbook extends Component {
   state = {
     currentSearchTerm: '',
     searchedDrinks: {},
     drinkData: [],
-    selectedDrink: ''
+    selectedDrink: '',
+    searchError: false
   };
 
   openRecipe = (id) => {
@@ -39,12 +42,17 @@ class Cookbook extends Component {
         this.setState({ searchedDrinks: data })
         // changing url using JS instead of anchor tag
         this.props.history.push(`/cookbook/${this.state.currentSearchTerm}`)
+      }).catch((err) => {
+        this.setState({ searchError: true})
       });
     e.preventDefault();
   }
 
-
-
+componentWillUpdate = () =>{
+  ()=>this.setState ({
+    searchError : false
+  })
+}
   render() {
     const { match, location } = this.props;
     let selectedDrinkDetails;
@@ -62,18 +70,26 @@ class Cookbook extends Component {
         />
     }
 
+    if (this.state.searchError){
+      <SearchError />
+    }
+    console.log(this.state.searchError)
+
     return (
       <div>
         {/* video background */}
         <div id="video-container">
-          <video id="video" muted loop autoPlay>
-            <source src="http://muloux.com/wp-content/uploads/2018/06/Pexels-Videos-5009.mp4" />
+          <video id="video" muted loop autoPlay>             
+          {/* <source src="http://muloux.com/wp-content/uploads/2018/05/White-Smoke.mp4" /> */}
+          <source src="http://muloux.com/wp-content/uploads/2018/06/WINE_POUR_SLOW_MOTION.mp4" />
+            {/* <source src="http://muloux.com/wp-content/uploads/2018/06/Pexels-Videos-5009.mp4" /> */}
             Your browser does not support the video tag.
           </video>
-          {/* calling on nav component */}
           <div>
+            {/* calling on nav component */}
             <div className="nav-parent">
               <Navigation />
+              {this.state.searchError ? <SearchError />: 
               <div id="search--bar">
                 <form onSubmit={this.handleSubmit}>
                   <input
@@ -82,29 +98,33 @@ class Cookbook extends Component {
                     value={this.state.currentSearchTerm} placeholder="Search.." />
                   <input type="submit" value="Submit" />
                 </form>
+              </div>}
+            </div>
+            <div className="container cookbook-parent">
+              <div className="row equal">
+                <div className="cookbook">
+                  <div className='col-md-4'>
+                    <div className="recipe-search-parent">
+                      <Route
+                        path={`/cookbook/:currentSearchTerm`}
+                        render={() => (
+                          <RecipeSearch
+                            currentSearchTerm={this.state.currentSearchTerm}
+                            searchedDrinks={this.state.searchedDrinks}
+                            openRecipe={this.openRecipe}
+                          />
+                        )}
+                      />
+                    </div>
+                  </div>
+                  <div className='col-md-4'>
+                    {selectedDrinkDetails}
+                  </div>
+                </div>
               </div>
             </div>
-            <div className="cookbook-parent container">
-            <div className="cookbook row">
-              <div className="recipe-search-parent col-sm">
-                <Route
-                  path={`/cookbook/:currentSearchTerm`}
-                  render={() => (
-                    <RecipeSearch
-                      currentSearchTerm={this.state.currentSearchTerm}
-                      searchedDrinks={this.state.searchedDrinks}
-                      openRecipe={this.openRecipe}
-                    />
-                  )}
-                />
-              </div>
-              <div className="col-sm">
-              {selectedDrinkDetails}
-              </div>
-            </div>
-            </div>
-            <Footer />
           </div>
+          <Footer />
         </div>
       </div>
     );
