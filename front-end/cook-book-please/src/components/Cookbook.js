@@ -80,10 +80,7 @@ componentWillUpdate = () =>{
         {/* video background */}
         <div id="video-container">
           <video id="video" muted loop autoPlay>               
-          {/* <source src="http://muloux.com/wp-content/uploads/2018/05/White-Smoke.mp4" /> */}
-            {/* <source src="http://muloux.com/wp-content/uploads/2018/06/Pexels-Videos-5009.mp4" /> */}
-            <source src="http://muloux.com/wp-content/uploads/2018/06/Drink-Wine.mp4" />
-
+            <source src="http://muloux.com/wp-content/uploads/2018/06/ezgif-5-6137a4ece3-1-1.mp4" />
             Your browser does not support the video tag.
           </video>
           <div>

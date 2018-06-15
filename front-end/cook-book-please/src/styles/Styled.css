@@ -1,5 +1,9 @@
 .html {
-  font-size: 10em; }
+  font-size: 10em;
+  font-family: 'Quicksand', sans-serif; }
+
+div {
+  font-family: 'Quicksand', sans-serif; }
 
 .splash-container_content {
   display: flex;
@@ -201,7 +205,9 @@ a:-webkit-any-link {
 
 .recipe-details_title {
   color: #F2D7EE;
-  font-size: 7rem; }
+  font-size: 9rem;
+  font-family: 'Abel', sans-serif;
+  text-transform: uppercase; }
 
 .recipe-details_ingredients_title, .recipe-details_instructions_title, .recipe-details_details_title {
   color: #A5668B;
@@ -300,14 +306,12 @@ a:-webkit-any-link {
     -moz-animation-delay: 1.6s;
     animation-delay: 1.6s; }
 
-.box {
-  width: 200px;
-  height: 200px;
-  position: relative;
-  margin: 10px;
-  float: left;
-  border: 1px solid #333;
-  background: #999; }
+.splash-container_content_header {
+  display: wrap;
+  justify-content: center;
+  align-items: center;
+  color: #A5668B;
+  margin-top: -30%; }
 
 @media only screen and (max-width: 766px) {
   .navbar-toggler {
@@ -329,14 +333,15 @@ a:-webkit-any-link {
     width: 80vw;
     margin-left: 6%; }
   .recipe-details_title {
-    font-size: 4rem; }
+    font-size: 3rem; }
   #recipe-details_close_tab {
     font-size: 3rem;
     font-color: #F2D7EE !important; }
   .recipe-search {
     margin-top: -40vh;
     flex-direction: column;
-    width: 35vw;
+    width: 70vw;
+    margin-left: 30%;
     height: 65vh; }
   .recipe-search--recipetitle {
     font-size: 2.2rem; }
