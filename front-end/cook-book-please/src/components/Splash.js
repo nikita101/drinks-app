@@ -16,7 +16,7 @@ const Splash = () => (
           <div className="splash-container_content_header">
             <h3>Please confirm your age.</h3>
             <Link to="/Cookbook">
-            <button>I am over 21</button>
+            <button className="btn-lg">I am over 21</button>
           </Link>
           </div>
         </div>

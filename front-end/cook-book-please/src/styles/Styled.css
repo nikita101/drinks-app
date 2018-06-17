@@ -83,6 +83,18 @@ div {
   padding: 0%;
   width: 100% !important; }
 
+.btn-lg {
+  color: white !important;
+  background-color: #D3BCC0;
+  border-radius: 0px;
+  width: 100%; }
+
+.btn-lg:hover {
+  border-radius: 0px;
+  color: pink !important;
+  background-color: #D3BCC0;
+  width: 100%; }
+
 .cookbook {
   position: absolute;
   display: flex;
@@ -146,7 +158,8 @@ div::-webkit-scrollbar-track {
 
 .recipe-search--recipetitle {
   color: #F2D7EE;
-  font-size: 1.8rem; }
+  font-size: 1.8rem;
+  margin-top: 10%; }
 
 .recipe-search--recipetitle:hover {
   text-decoration: none !important; }
@@ -310,7 +323,7 @@ a:-webkit-any-link {
   display: wrap;
   justify-content: center;
   align-items: center;
-  color: #A5668B;
+  color: white;
   margin-top: -30%; }
 
 @media only screen and (max-width: 766px) {
