@@ -43,16 +43,16 @@ class Cookbook extends Component {
         // changing url using JS instead of anchor tag
         this.props.history.push(`/cookbook/${this.state.currentSearchTerm}`)
       }).catch((err) => {
-        this.setState({ searchError: true})
+        this.setState({ searchError: true })
       });
     e.preventDefault();
   }
 
-componentWillUpdate = () =>{
-  ()=>this.setState ({
-    searchError : false
-  })
-}
+  componentWillUpdate = () => {
+    () => this.setState({
+      searchError: false
+    })
+  }
   render() {
     const { match, location } = this.props;
     let selectedDrinkDetails;
@@ -70,7 +70,7 @@ componentWillUpdate = () =>{
         />
     }
 
-    if (this.state.searchError){
+    if (this.state.searchError) {
       <SearchError />
     }
     console.log(this.state.searchError)
@@ -79,7 +79,7 @@ componentWillUpdate = () =>{
       <div className="fade-in one">
         {/* video background */}
         <div id="video-container">
-          <video id="video" muted loop autoPlay>               
+          <video id="video" muted loop autoPlay>
             <source src="http://muloux.com/wp-content/uploads/2018/06/ezgif-5-6137a4ece3-1-1.mp4" />
             Your browser does not support the video tag.
           </video>
@@ -87,16 +87,16 @@ componentWillUpdate = () =>{
             {/* calling on nav component */}
             <div className="nav-parent">
               <Navigation />
-              {this.state.searchError ? <SearchError />: 
-              <div id="search--bar">
-                <form onSubmit={this.handleSubmit}>
-                  <input
-                    type="text"
-                    onChange={this.onChange}
-                    value={this.state.currentSearchTerm} placeholder="Search.." />
-                  <input type="submit" value="Submit" />
-                </form>
-              </div>}
+              {this.state.searchError ? <SearchError /> :
+                <div id="search--bar">
+                  <form onSubmit={this.handleSubmit}>
+                    <input
+                      type="text"
+                      onChange={this.onChange}
+                      value={this.state.currentSearchTerm} placeholder="Search.." />
+                    <input type="submit" value="Submit" />
+                  </form>
+                </div>}
             </div>
             <div className="container cookbook-parent">
               <div className="row equal">

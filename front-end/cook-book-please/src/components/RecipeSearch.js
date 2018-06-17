@@ -27,13 +27,13 @@ class RecipeSearch extends Component {
             recipesJSX = searchedRecipe.drinks.map((item, i) =>
                 // actual recipe
                 <div key={i}>
-                    <Link to={`/cookbook/${this.state.searchTerm}/${searchedDrinks.drinks[i].idDrink}`} 
-                    onClick={() => this.props.openRecipe(searchedDrinks.drinks[i].idDrink)}>
-                    {/* recipe name */}
-                    <div className="recipe-search--recipetitle">
-                        <p>{searchedRecipe.drinks[i].strDrink}</p>
-                    </div>
-                    {/* recipe image */}
+                    <Link to={`/cookbook/${this.state.searchTerm}/${searchedDrinks.drinks[i].idDrink}`}
+                        onClick={() => this.props.openRecipe(searchedDrinks.drinks[i].idDrink)}>
+                        {/* recipe name */}
+                        <div className="recipe-search--recipetitle">
+                            <p>{searchedRecipe.drinks[i].strDrink}</p>
+                        </div>
+                        {/* recipe image */}
                         <img
                             className="recipe--images"
                             src={searchedRecipe.drinks[i].strDrinkThumb}>
